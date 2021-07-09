@@ -15,12 +15,12 @@
 			<label>Email: </label><br>
 			<input type="text" required="required" name = "fullName" th:field="*{email}" placeholder="Your email"><br><br>
 			<label>Favorite Platform: </label><br>
-			<select  name="platform" required="required" th:field="*{platform}"><br><br>
+			<select  name="platform" required="required" th:field="*{platform}">
 			<option value="">---select favorite platform---</option>
               <option th:value="github">Github</option>
               <option th:value="gitlab">Gitlab</option>
               <option th:value="Bitbucket">Bitbucket</option>
-            </select>
+            </select><br><br>
             <label>Upload cv: </label><br>
             <input type="file" name = "photo" value="photo"  multiple="multiple"><br><br>
             <input type="submit" value="submit">

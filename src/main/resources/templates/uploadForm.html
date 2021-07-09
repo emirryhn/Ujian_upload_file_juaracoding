@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" href="style.css">
+<title>Upload Form</title>
+</head>
+<body>
+	<div class="col-md-6 offset-md-3 mt-5">
+	<p th:text="${messageDone}" th:if="${messageDone}" role="alert" style="color: red;"></p>
+		<form th:action="@{/addCv}" th:object="${addcv}" method="post" enctype="multipart/form-data">
+		<input type="hidden">
+			<label>Full Name: </label><br>
+			<input type="text" name = "fullName" th:field="*{fullName}" required="required" placeholder="Your full name"><br><br>
+			<label>Email: </label><br>
+			<input type="text" required="required" name = "fullName" th:field="*{email}" placeholder="Your email"><br><br>
+			<label>Favorite Platform: </label><br>
+			<select  name="platform" required="required" th:field="*{platform}"><br><br>
+			<option value="">---select favorite platform---</option>
+              <option th:value="github">Github</option>
+              <option th:value="gitlab">Gitlab</option>
+              <option th:value="Bitbucket">Bitbucket</option>
+            </select>
+            <label>Upload cv: </label><br>
+            <input type="file" name = "photo" value="photo"  multiple="multiple"><br><br>
+            <input type="submit" value="submit">
+		</form>
+	</div>
+</body>
+</html>

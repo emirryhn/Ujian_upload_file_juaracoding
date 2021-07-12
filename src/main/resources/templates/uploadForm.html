@@ -7,7 +7,8 @@
 </head>
 <body>
 	<div class="col-md-6 offset-md-3 mt-5">
-	<p th:text="${messageDone}" th:if="${messageDone}" role="alert" style="color: red;"></p>
+	<p th:text="${messageDone}" th:if="${messageDone}" role="alert" style="color: green;"></p>
+	<p th:text="${errormsg}" th:if="${errormsg}" role="alert" style="color: red;"></p>
 		<form th:action="@{/addCv}" th:object="${addcv}" method="post" enctype="multipart/form-data">
 		<input type="hidden">
 			<label>Full Name: </label><br>
@@ -22,7 +23,9 @@
               <option th:value="Bitbucket">Bitbucket</option>
             </select><br><br>
             <label>Upload cv: </label><br>
-            <input type="file" name = "photo" value="photo"  multiple="multiple"><br><br>
+            <input type="file" name = "photo" value="photo"  multiple="multiple"> <!-- accept="application/pdf" --><br><br>
+            <!-- accept="application/pdf" to limit file type uploaded -->
+            <!-- accept="image/jpeg" to limit file image jpeg -->
             <input type="submit" value="submit">
 		</form>
 	</div>

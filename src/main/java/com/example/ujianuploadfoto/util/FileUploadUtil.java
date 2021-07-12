@@ -7,6 +7,9 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 
+import javax.servlet.MultipartConfigElement;
+
+import org.springframework.boot.web.servlet.MultipartConfigFactory;
 import org.springframework.web.multipart.MultipartFile;
 
 public class FileUploadUtil {
@@ -17,7 +20,7 @@ public class FileUploadUtil {
 		
 		if(!Files.exists(path)) {
 			Files.createDirectories(path);
-		}
+		}		
 		
 		try(InputStream inputStream = file.getInputStream()) {
 			Files.copy(inputStream, path, StandardCopyOption.REPLACE_EXISTING );
@@ -26,5 +29,7 @@ public class FileUploadUtil {
 		}
 		
 	}
-
+	
+	  
 }
+	   
